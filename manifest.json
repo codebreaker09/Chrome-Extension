@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Focus",
+  "version": "1.0",
+  "description": "Learning to make extensions",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["./main.js"]
+    }
+  ]
+}
