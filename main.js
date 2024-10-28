@@ -1,2 +1,6 @@
-const contents = document.getElementById('contents');
-contents.parentNode.removeChild(contents);
+const contents = $('#contents');
+const contentParent = contents.parent();
+contents.remove();
+const replacement = document.createElement('img');
+replacement.setAttribute('src', '/assets/Explosion.jpeg');
+contentParent.prepend(replacement);
