@@ -1,12 +1,31 @@
 {
   "manifest_version": 3,
-  "name": "Focus",
+  "name": "Break Timer",
   "version": "1.0",
-  "description": "Learning to make extensions",
+  "description": "This will prevent users from slacking for too long.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["alarms", "notifications"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://x.com/*",
+    "https://www.facebook.com/*",
+    "https://www.instagram.com/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
-      "js": ["jquery.min.js", "./main.js"]
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://x.com/*",
+        "https://www.facebook.com/*",
+        "https://www.instagram.com/*"
+      ],
+      "js": ["jquery.min.js", "content.js"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Break Timer Settings"
+  }
 }
