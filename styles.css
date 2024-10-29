@@ -1,0 +1,15 @@
+@keyframes flashRed {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: transparent;
+  } /* Or transparent for no color */
+  100% {
+    background-color: red;
+  }
+}
+
+#close-button {
+  animation: flashRed 0.5s ease-in-out infinite;
+}
